@@ -1,0 +1,107 @@
+{% extends 'blog/layout.html' %}
+
+{% block body %}
+    <!-- pageheader
+    ================================================== -->
+
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow s-content--no-padding-bottom" style="margin-top: 250px;">
+
+        <article class="row format-standard">
+
+            <div class="s-content__header col-full">
+                <h1 class="s-content__header-title">
+                    {{post.title}}
+                </h1>
+                <ul class="s-content__header-meta">
+                    <li class="date">{{post.created_at}}</li>
+                    <li class="cat">
+                        In
+                        {% for tag in post.tags.all %}
+                        <a href="/tags/{{tag.name}}">{{tag.name}}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div> <!-- end s-content__header -->
+            
+            <!-- end s-content__media -->
+
+            {% if post.image %}
+            <img src="static/images/{{post.image}}">
+            {% endif %}
+
+            
+            
+            <div class="col-full s-content__main">
+                {% for element in post.elements.all %}
+                {% if element.element_type == 0 %}
+                <p class="lead">{{element.content}}.</p>
+                {% endif %}
+
+                {% if element.element_type == 1 %}
+                <p>{{element.content}}</p>
+                {% endif %}
+
+                {% if element.element_type == 8 %}
+                <p>
+                <img src="images/wheel-1000.jpg" 
+                     srcset="images/wheel-2000.jpg 2000w, images/wheel-1000.jpg 1000w, images/wheel-500.jpg 500w" 
+                     sizes="(max-width: 2000px) 100vw, 2000px" alt="">
+                </p>
+                {% endif %}
+
+                {% if element.element_type == 2 %}
+                <h2>{{element.content}}</h2>
+                {% endif %}
+                {% if element.element_type == 4 %}
+                <p>{{element.content}}</p>
+                {% endif %}
+                {% if element.element_type == 3 %}
+                <h3>{{element.content}}</h3>
+                {% endif %}
+
+                {% if element.element_type == 6 %}
+                <pre><code>
+                   {{element.content}}
+                </code></pre>
+                {% endif %}
+                {% if element.element_type == 7 %}
+                <ul>
+                    {{element.content}}
+                </ul>
+                {% endif %}
+                {% endfor %}
+                <p class="s-content__tags">
+                    <span>Post Tags</span>
+
+                    <span class="s-content__tag-list">
+                        {% for tag in post.tags.all %}
+                        <a href="/tag/{{tag.name}}">{{tag.name}}</a>
+                        {% endfor %}
+                    </span>
+                </p> <!-- end s-content__tags -->
+
+                <div class="s-content__pagenav">
+                    <div class="s-content__nav">
+                        <div class="s-content__prev">
+                            <a href="#0" rel="prev">
+                                <span>Previous Post</span>
+                                Tips on Minimalist Design 
+                            </a>
+                        </div>
+                        <div class="s-content__next">
+                            <a href="#0" rel="next">
+                                <span>Next Post</span>
+                                Less Is More 
+                            </a>
+                        </div>
+                    </div>
+                </div> <!-- end s-content__pagenav -->
+
+            </div> <!-- end s-content__main -->
+
+        </article>
+
+
+{% endblock %}
