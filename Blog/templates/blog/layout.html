@@ -18,18 +18,18 @@
 
     <!-- mobile specific metas
     ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- CSS
+    <meta name="viewport" content="width=device-width, initi    al-scale=1, maximum-scale=1">
+        {% load static %}
+    <!-- CSS    
     ================================================== -->
-    <link rel="stylesheet" href="static/css/base.css">
-    <link rel="stylesheet" href="static/css/vendor.css">
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vendor.c' %}ss">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
     <!-- script
     ================================================== -->
-    <script src="static/js/modernizr.js"></script>
-    <script src="static/js/pace.min.js"></script>
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
 
     <!-- favicons
     ================================================== -->
@@ -146,7 +146,8 @@
                         </section>
                     </article>
                     
-                </div>  -->
+                </div>
+-->
                 
                 <!-- end popular_posts -->
             </div> <!-- end popular -->
@@ -288,9 +289,9 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="static/js/jquery-3.2.1.min.js"></script>
-    <script src="static/js/plugins.js"></script>
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %} "></script>
+    <script src="{% static 'js/plugins.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
     
 </body>
 

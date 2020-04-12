@@ -8,7 +8,8 @@ def Home(request):
         'posts':Blogs.objects.all()
     })
 
-def Blog(request):
+def Blog(request,blog):
+    blog=Blogs.objects.filter(slug=blog).first()
     return render(request,'blog/single-standard.html',{
-        'post':Blogs.objects.first()
+        'post':blog
     })
