@@ -1,11 +1,10 @@
 {% extends 'blog/layout.html' %}
 
-{% block body %}
-    <!-- pageheader
-    ================================================== -->
+{% block title %}
 
-    <!-- s-content
-    ================================================== -->
+{{post.title}}
+{% endblock %}
+{% block body %}
     <section class="s-content s-content--narrow s-content--no-padding-bottom" style="margin-top: 250px;">
 
         <article class="row format-standard">
@@ -23,9 +22,7 @@
                         {% endfor %}
                     </li>
                 </ul>
-            </div> <!-- end s-content__header -->
-            
-            <!-- end s-content__media -->
+            </div>
             <div class="s-content__header col-full">
             {% if post.thumb %}
             <img src="{{post.thumb}}" style="max-height: 650px;">
@@ -35,9 +32,7 @@
             <div class="col-full s-content__main">
 
 
-<!-- Post content start -->
                {{post.content | safe}}
-<!-- Post Content end -->
 
 
 
@@ -78,10 +73,8 @@
                 </div>
                  -->
                 
-                <!-- end s-content__pagenav -->
-
-            </div> <!-- end s-content__main -->
-
+              
+            </div>
         </article>
 
 

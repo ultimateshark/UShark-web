@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162791369-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,26 +12,16 @@
 
     <meta charset="utf-8">
     <title>Ultimateshark</title>
-    <meta name="description" content="Ultimateshark | Cyber Security Re-engaged">
+    <meta name="description" content="Ultimateshark | Cyber Security Re-engaged {% block title %}{% endblock %} ">
     <meta name="author" content="">
 
-    <!-- mobile specific metas
-    ================================================== -->
     <meta name="viewport" content="width=device-width, initi    al-scale=1, maximum-scale=1">
         {% load static %}
-    <!-- CSS    
-    ================================================== -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/vendor.c' %}ss">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
-    <!-- script
-    ================================================== -->
     <script src="{% static 'js/modernizr.js' %}"></script>
     <script src="{% static 'js/pace.min.js' %}"></script>
-
-    <!-- favicons
-    ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -49,8 +38,7 @@
                 <a class="logo" href="index.html">
                     <h2 style="color: white;">Ultimateshark</h2>
                 </a>
-            </div> <!-- end header__logo -->
-
+            </div> 
             <ul class="header__social">
                 <li>
                     <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -64,8 +52,7 @@
                 <li>
                     <a href="#0"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                 </li>
-            </ul> <!-- end header__social -->
-
+            </ul>
             <a class="header__search-trigger" href="#0"></a>
 
             <div class="header__search">
@@ -80,8 +67,7 @@
     
                 <a href="#0" title="Close Search" class="header__overlay-close">Close</a>
 
-            </div>  <!-- end header__search -->
-
+            </div>
 
             <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
 
@@ -100,58 +86,44 @@
                         <li><a href="/tags/binary-hacking">Binary Hacking</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="has-children"> -->
                     <li>
                         <a href="/blogs" title="">Blogs</a>
-                        <!-- <ul class="sub-menu">
-                        <li><a href="single-video.html">Video Post</a></li>
-                        <li><a href="single-audio.html">Audio Post</a></li>
-                        <li><a href="single-gallery.html">Gallery Post</a></li>
-                        <li><a href="single-standard.html">Standard Post</a></li>
-                        </ul> -->
                     </li>
-                    <!-- <li class="current"><a href="contact.html" title="">Contact</a></li> -->
-                </ul> <!-- end header__nav -->
-
+                </ul>
                 <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
 
-            </nav> <!-- end header__nav-wrap -->
-
-        </div> <!-- header-content -->
-    </header> <!-- header -->
-
+            </nav> 
+        </div> 
+    </header>
     
     
     {% block body %}
 
     {%endblock%}
-    <!-- s-extra
-    ================================================== -->
     <section class="s-extra">
 
         <div class="row top">
 
             <div class="col-eight md-six tab-full popular">
                 <h3>Popular Posts</h3>
-<!-- 
+                {% for post in newposts %}
                 <div class="block-1-2 block-m-full popular__posts">
                     <article class="col-block popular__post">
                         <a href="#0" class="popular__thumb">
-                            <img src="static/images/thumbs/small/wheel-150.jpg" alt="">
+                            <img src="{{post.thumb}}" alt="">
                         </a>
-                        <h5><a href="#0">Visiting Theme Parks Improves Your Health.</a></h5>
+                        <h5><a href="/blog/{{post.slug}}">{{post.title}}</a></h5>
                         <section class="popular__meta">
-                                <span class="popular__author"><span>By</span> <a href="#0"> John Doe</a></span>
-                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">Dec 19, 2017</time></span>
+                                <span class="popular__author"><span>By</span> <a href="#0"> {{post.user.name}}</a></span>
+                            <span class="popular__date"><span>on</span> <time datetime="2017-12-19">{{post.created_at}}</time></span>
                         </section>
                     </article>
                     
                 </div>
--->
+                {% endfor %}
+
                 
-                <!-- end popular_posts -->
-            </div> <!-- end popular -->
-            
+            </div>
             <div class="col-four md-six tab-full about">
                 <h3>About Ultimateshark</h3>
 

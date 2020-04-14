@@ -3,8 +3,6 @@
 <script>
     swal("Site Is Under Building Process please keep calm!!!!")
 </script>
-    <!-- pageheader
-    ================================================== -->
     <section class="s-pageheader--home">
 
         <div class="pageheader-content row">
@@ -30,10 +28,9 @@
                                         <li>December 30, 2019</li>
                                     </ul>
                                 </div>
-                            </div> <!-- end entry__content -->
-                            
-                        </div> <!-- end entry -->
-                    </div> <!-- end featured__big -->
+                            </div>
+                        </div> 
+                    </div> 
 
                     <div class="featured__column featured__column--small">
 
@@ -54,9 +51,9 @@
                                         <li>December 27, 2019</li>
                                     </ul>
                                 </div>
-                            </div> <!-- end entry__content -->
+                            </div>
                           
-                        </div> <!-- end entry -->
+                        </div> 
 
                         <div class="entry" style="background-image:url('images/thumbs/featured/featured-beetle.jpg');">
 
@@ -75,24 +72,22 @@
                                         <li>December 21, 2019</li>
                                     </ul>
                                 </div>
-                            </div> <!-- end entry__content -->
+                            </div>
 
-                        </div> <!-- end entry -->
+                        </div>
 
-                    </div> <!-- end featured__small -->
-                </div> <!-- end featured -->
+                    </div>
+                </div>
 
-            </div> <!-- end col-full -->
-        </div> <!-- end pageheader-content row -->
+            </div>
+        </div> 
 
-    </section> <!-- end s-pageheader -->
-
-
+    </section> 
 
 
 
-<!-- s-content
-    ================================================== -->
+
+
     <section class="s-content">
         <div class="row masonry-wrap">
             <div class="masonry">
@@ -113,7 +108,7 @@
                         <div class="entry__header">
                             
                             <div class="entry__date">
-                                <a href="/blog">{{post.created_at}}</a>
+                                <a href="/blog/{{post.slug}}">{{post.created_at}}</a>
                             </div>
                             <h1 class="entry__title"><a href="/blog/{{post.slug}}">{{post.title}}</a></h1>
                             
@@ -132,11 +127,10 @@
                         </div>
                     </div>
     
-                </article> <!-- end article -->
-                
+                </article> 
                 {% endfor %}
-            </div> <!-- end masonry -->
-        </div> <!-- end masonry-wrap -->
+            </div> 
+        </div> 
         <div class="row">
             <div class="col-full">
                 <nav class="pgn">
@@ -147,5 +141,5 @@
             </div>
         </div>
 
-    </section> <!-- s-content -->
+    </section> 
 {% endblock %}
