@@ -4,8 +4,9 @@ from .models import *
 # Create your views here.
 
 def Home(request):
+    allposts=Blogs.objects.all()
     return render(request,'blog/index.html',{
-        'posts':Blogs.objects.all(),
+        'posts':allposts,
         'newposts':RecentPosts()
     })
 
